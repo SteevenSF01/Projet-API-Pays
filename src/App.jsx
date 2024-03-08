@@ -13,6 +13,7 @@ function App() {
   const [error, setError] = useState(null);
   const [recherche, setRecherche] = useState("");
   const [filtrer, setFiltrer] = useState([]);
+  const [theme, setTheme] = useState(false);
 
   // console.log(data);
 
@@ -43,7 +44,11 @@ function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Navbar />,
+      element: (
+        <info.Provider value={{ theme, setTheme }}>
+          <Navbar />
+        </info.Provider>
+      ),
       children: [
         {
           path: "/",
@@ -57,6 +62,8 @@ function App() {
                   setRecherche,
                   filtrer,
                   recherche,
+                  theme,
+                  setTheme,
                 }}
               >
                 <Home />,
@@ -68,7 +75,7 @@ function App() {
         {
           path: "/Details",
           element: (
-            <info.Provider value={{ data }}>
+            <info.Provider value={{ data, theme, setTheme }}>
               <Details />
             </info.Provider>
           ),
@@ -76,7 +83,7 @@ function App() {
         {
           path: "/Details/:idPays",
           element: (
-            <info.Provider value={{ data }}>
+            <info.Provider value={{ data, theme }}>
               <Details />
             </info.Provider>
           ),
@@ -91,7 +98,11 @@ function App() {
     return <div>Loading...</div>;
   } else {
     return (
-      <div className={`bg-[#202D36ff]  h-fit flex flex-col`}>
+      <div
+        className={`${
+          theme ? "bg-white" : "bg-[#202D36ff]"
+        }  h-fit flex flex-col`}
+      >
         <RouterProvider router={router} />
       </div>
     );
