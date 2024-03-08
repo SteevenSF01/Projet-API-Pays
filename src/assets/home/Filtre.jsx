@@ -16,9 +16,7 @@ export default function Filtre() {
 
   return (
     <select className="select select-bordered w-[55%] max-w-xs">
-      <option disabled selected>
-        Filter by Region
-      </option>
+      <option disabled>Filter by Region</option>
       {regionsArray.map((region, index) => {
         return (
           <option key={index} value={region}>

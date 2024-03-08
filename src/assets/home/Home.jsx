@@ -10,7 +10,7 @@ export default function Home() {
         <InputSearch />
       </div>
       <div className="mb-5 ps-3">
-      <Filtre />
+        <Filtre />
       </div>
       <CardsPays />
     </>

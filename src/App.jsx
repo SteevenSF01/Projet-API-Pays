@@ -10,6 +10,9 @@ export const info = createContext();
 function App() {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
+  const [recherche, setRecherche] = useState("");
+  const [filtrer, setFiltrer] = useState([]);
+
   console.log(data);
 
   useEffect(() => {
@@ -26,6 +29,16 @@ function App() {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    if (data) {
+      const filteredItems = data.filter((item) =>
+        item.name.common.toLowerCase().includes(recherche.toLowerCase())
+      );
+
+      setFiltrer(filteredItems);
+    }
+  }, [data, recherche]);
+
   const router = createBrowserRouter([
     {
       path: "/",
@@ -35,7 +48,16 @@ function App() {
           path: "/",
           element: (
             <div className="container py-10">
-              <info.Provider value={{ data }}>
+              <info.Provider
+                value={{
+                  data,
+                  setData,
+                  setFiltrer,
+                  setRecherche,
+                  filtrer,
+                  recherche,
+                }}
+              >
                 <Home />,
               </info.Provider>
             </div>
