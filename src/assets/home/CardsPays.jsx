@@ -4,7 +4,11 @@ import { info } from "../../App";
 import { Link } from "react-router-dom";
 
 export default function CardsPays() {
-  const { filtrer } = useContext(info);
+  const { filtrer, data } = useContext(info);
+  const chercherIndex = (element) => {
+    const i = data.findIndex((x) => x.name.common === element.name.common);
+    return i;
+  };
   return (
     <section className="text-white flex flex-wrap gap-10 justify-center">
       {filtrer == 0 ? (
@@ -12,7 +16,7 @@ export default function CardsPays() {
       ) : (
         filtrer.map((element, index) => {
           return (
-            <Link to={`/Details/${index}`}>
+            <Link to={`/Details/${chercherIndex(element)}`}>
               <div
                 key={index}
                 className=" w-[300px] md:w-[280px] h-[380px] bg-[#2B3743ff] rounded-lg overflow-hidden "
@@ -38,7 +42,7 @@ export default function CardsPays() {
                   </p>
                   <p className="text-[16px]">
                     Capital:{" "}
-                    <span className="text-gray-400">{element.capital} </span>
+                    <span className="text-gray-400">{element.capital ? element.capital :'Undefined'} </span>
                   </p>
                 </div>
               </div>
