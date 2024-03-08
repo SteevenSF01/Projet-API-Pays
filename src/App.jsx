@@ -4,6 +4,7 @@ import Navbar from "./assets/Navbar";
 import Home from "./assets/home/Home";
 import axios from "axios";
 import "./App.css";
+import Details from "./assets/Details/Details";
 
 export const info = createContext();
 
@@ -13,7 +14,7 @@ function App() {
   const [recherche, setRecherche] = useState("");
   const [filtrer, setFiltrer] = useState([]);
 
-  console.log(data);
+  // console.log(data);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -44,25 +45,41 @@ function App() {
       path: "/",
       element: <Navbar />,
       children: [
+        // {
+        //   path: "/",
+        //   element: (
+        //     <div className="container py-10">
+        //       <info.Provider
+        //         value={{
+        //           data,
+        //           setData,
+        //           setFiltrer,
+        //           setRecherche,
+        //           filtrer,
+        //           recherche,
+        //         }}
+        //       >
+        //         <Home />,
+        //       </info.Provider>
+        //     </div>
+        //   ),
+        //   index: true,
+        // },
         {
-          path: "/",
+          path: "/Details",
           element: (
-            <div className="container py-10">
-              <info.Provider
-                value={{
-                  data,
-                  setData,
-                  setFiltrer,
-                  setRecherche,
-                  filtrer,
-                  recherche,
-                }}
-              >
-                <Home />,
-              </info.Provider>
-            </div>
+            <info.Provider value={{ data }}>
+              <Details />
+            </info.Provider>
           ),
-          index: true,
+        },
+        {
+          path: "/Details/:idPays",
+          element: (
+            <info.Provider value={{ data }}>
+              <Details />
+            </info.Provider>
+          ),
         },
       ],
     },

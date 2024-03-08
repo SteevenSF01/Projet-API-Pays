@@ -1,6 +1,7 @@
 import React from "react";
 import { useContext } from "react";
 import { info } from "../../App";
+import { Link } from "react-router-dom";
 
 export default function CardsPays() {
   const { filtrer } = useContext(info);
@@ -11,9 +12,11 @@ export default function CardsPays() {
       ) : (
         filtrer.map((element, index) => {
           return (
+            <Link to={`/Details/${index}`}>
+
             <div
               key={index}
-              className=" w-[300px] md:w-[280px] h-[400px] bg-[#2B3743ff] rounded-lg overflow-hidden "
+              className=" w-[300px] md:w-[280px] h-[380px] bg-[#2B3743ff] rounded-lg overflow-hidden "
             >
               <div className="w-full h-[45%] ">
                 <img
@@ -38,6 +41,8 @@ export default function CardsPays() {
                 </p>
               </div>
             </div>
+            </Link>
+
           );
         })
       )}
