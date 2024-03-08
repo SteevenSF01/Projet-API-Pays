@@ -45,26 +45,26 @@ function App() {
       path: "/",
       element: <Navbar />,
       children: [
-        // {
-        //   path: "/",
-        //   element: (
-        //     <div className="container py-10">
-        //       <info.Provider
-        //         value={{
-        //           data,
-        //           setData,
-        //           setFiltrer,
-        //           setRecherche,
-        //           filtrer,
-        //           recherche,
-        //         }}
-        //       >
-        //         <Home />,
-        //       </info.Provider>
-        //     </div>
-        //   ),
-        //   index: true,
-        // },
+        {
+          path: "/",
+          element: (
+            <div className="container py-10">
+              <info.Provider
+                value={{
+                  data,
+                  setData,
+                  setFiltrer,
+                  setRecherche,
+                  filtrer,
+                  recherche,
+                }}
+              >
+                <Home />,
+              </info.Provider>
+            </div>
+          ),
+          index: true,
+        },
         {
           path: "/Details",
           element: (

@@ -13,36 +13,36 @@ export default function CardsPays() {
         filtrer.map((element, index) => {
           return (
             <Link to={`/Details/${index}`}>
-
-            <div
-              key={index}
-              className=" w-[300px] md:w-[280px] h-[380px] bg-[#2B3743ff] rounded-lg overflow-hidden "
-            >
-              <div className="w-full h-[45%] ">
-                <img
-                  src={element.flags.png}
-                  alt=""
-                  className="w-full h-full object-fill"
-                />
+              <div
+                key={index}
+                className=" w-[300px] md:w-[280px] h-[380px] bg-[#2B3743ff] rounded-lg overflow-hidden "
+              >
+                <div className="w-full h-[45%] ">
+                  <img
+                    src={element.flags.png}
+                    alt=""
+                    className="w-full h-full object-fill"
+                  />
+                </div>
+                <div className="container flex flex-col justify-start py-3 items-start w-full h-[55%]">
+                  <h1 className="text-2xl my-2">{element.name.common}</h1>
+                  <p className="text-[16px]">
+                    Population:{" "}
+                    <span className="text-gray-400">
+                      {element.population} people{" "}
+                    </span>
+                  </p>
+                  <p className="text-[16px]">
+                    Region:{" "}
+                    <span className="text-gray-400">{element.region}</span>
+                  </p>
+                  <p className="text-[16px]">
+                    Capital:{" "}
+                    <span className="text-gray-400">{element.capital} </span>
+                  </p>
+                </div>
               </div>
-              <div className="container flex flex-col justify-start py-3 items-start w-full h-[55%]">
-                <h1 className="text-2xl my-2">{element.name.common}</h1>
-                <p className="text-[16px]">
-                  Population:{" "}
-                  <span className="text-gray-400">{element.population} </span>
-                </p>
-                <p className="text-[16px]">
-                  Region:{" "}
-                  <span className="text-gray-400">{element.region}</span>
-                </p>
-                <p className="text-[16px]">
-                  Capital:{" "}
-                  <span className="text-gray-400">{element.capital} </span>
-                </p>
-              </div>
-            </div>
             </Link>
-
           );
         })
       )}
