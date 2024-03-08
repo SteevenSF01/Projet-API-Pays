@@ -6,10 +6,8 @@ import Filtre from "./Filtre";
 export default function Home() {
   return (
     <>
-      <div className="mb-5">
+      <div className="flex flex-col items-start justify-center gap-5 mb-5">
         <InputSearch />
-      </div>
-      <div className="mb-5 ps-3">
         <Filtre />
       </div>
       <CardsPays />

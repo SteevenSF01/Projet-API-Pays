@@ -15,7 +15,7 @@ export default function Filtre() {
   const regionsArray = [...uniqueRegions];
 
   return (
-    <select className="select select-bordered w-[55%] max-w-xs">
+    <select className="select select-bordered w-[60%] max-w-xs">
       <option disabled>Filter by Region</option>
       {regionsArray.map((region, index) => {
         return (

@@ -13,7 +13,7 @@ export default function InputSearch() {
   };
 
   return (
-    <div className="flex justify-center">
+    <div className="flex">
       <label className="input input-bordered flex items-center gap-2 w-[92%]">
         <svg
           xmlns="http://www.w3.org/2000/svg"

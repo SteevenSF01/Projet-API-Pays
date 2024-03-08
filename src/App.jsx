@@ -74,7 +74,7 @@ function App() {
     return <div>Loading...</div>;
   } else {
     return (
-      <div className="bg-[#202D36ff] h-fit flex flex-col">
+      <div className={`bg-[#202D36ff]  h-fit flex flex-col`}>
         <RouterProvider router={router} />
       </div>
     );
