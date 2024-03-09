@@ -24,7 +24,7 @@ return (
       </p>
     ) : (
       filtrer.map((element, index) => (
-        <Link key={index} to={`/Details/${chercherIndex(element)}`}>
+        <Link key={index} to={`/Projet-API-Pays/Details/${chercherIndex(element)}`}>
           <div
             className={`${
               theme

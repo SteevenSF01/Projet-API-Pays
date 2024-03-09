@@ -46,7 +46,7 @@ function App() {
 
   const router = createBrowserRouter([
     {
-      path: "/",
+      path: "/Projet-API-Pays/",
       element: (
         <info.Provider value={{ theme, setTheme }}>
           <Navbar />
@@ -54,7 +54,7 @@ function App() {
       ),
       children: [
         {
-          path: "/",
+          path: "/Projet-API-Pays/",
           element: (
             <div className="container py-10">
               <info.Provider
@@ -76,7 +76,7 @@ function App() {
           index: true,
         },
         {
-          path: "/Details",
+          path: "/Projet-API-Pays/Details",
           element: (
             <info.Provider value={{ data, theme, setTheme, setRecherche }}>
               <Details />
@@ -84,7 +84,7 @@ function App() {
           ),
         },
         {
-          path: "/Details/:idPays",
+          path: "/Projet-API-Pays/Details/:idPays",
           element: (
             <info.Provider value={{ data, theme, setRecherche }}>
               <Details />

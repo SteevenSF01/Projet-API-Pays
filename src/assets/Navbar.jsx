@@ -12,7 +12,7 @@ export default function Navbar() {
           theme ? "bg-[#f4f5f7]" : "bg-[#2B3743ff]"
         } border-b-2 border-gray-500 duration-500 px-10 flex justify-between items-center h-[50px] md:w-screen `}
       >
-        <Link to="/">
+        <Link to="/Projet-API-Pays/">
           <h1
             className={`${
               theme ? "text-gray-600" : "text-white"

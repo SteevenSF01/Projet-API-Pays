@@ -19,7 +19,7 @@ export default function Details() {
 
   return (
     <>
-      <Link to="/">
+      <Link to="/Projet-API-Pays/">
         <button
           className={` ${
             theme ? "text-gray-600 bg-white" : "text-white"
@@ -114,7 +114,7 @@ export default function Details() {
                 <div className="flex flex-wrap gap-3 text-gray-400">
                   {details.borders && details.borders.length > 0 ? (
                     details.borders.map((element, i) => (
-                      <Link key={i} to={`/Details/${chercherIndex(element)}`}>
+                      <Link key={i} to={`/Projet-API-Pays/Details/${chercherIndex(element)}`}>
                         <button className="border-2 py-1 px-3 rounded-xl">
                           {chercherPays(element)}
                         </button>
