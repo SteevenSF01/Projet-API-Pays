@@ -28,7 +28,9 @@ export default function Filtre() {
   };
 
   return (
-    <select className="select select-bordered w-[60%] max-w-xs" value={selectedRegion} onChange={filtreRegion}>
+    <div className="w-[100px] flex justify-center ms-2 ">
+
+    <select className="select select-bordered " value={selectedRegion} onChange={filtreRegion}>
       {regionsArray.map((region, index) => {
         return (
           <option key={index} value={region}>
@@ -37,5 +39,6 @@ export default function Filtre() {
         );
       })}
     </select>
+      </div>
   );
 }

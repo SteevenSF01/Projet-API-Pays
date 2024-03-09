@@ -14,7 +14,7 @@ export default function InputSearch() {
 
   return (
     <div className="flex">
-      <label className="input input-bordered flex items-center gap-2 w-[92%]">
+      <label className="input input-bordered flex items-center gap-2 w-[70%] md:w-full ">
 
         <input
           type="text"

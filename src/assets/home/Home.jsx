@@ -6,7 +6,7 @@ import Filtre from "./Filtre";
 export default function Home() {
   return (
     <>
-      <div className="flex flex-col items-start justify-center gap-5 mb-10">
+      <div className="flex flex-col items-start justify-between gap-5 mb-10 px-5 md:flex-row">
         <InputSearch />
         <Filtre />
       </div>
