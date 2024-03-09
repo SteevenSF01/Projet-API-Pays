@@ -1,8 +1,9 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { info } from "../../App";
 
 export default function Filtre() {
-  const { data } = useContext(info);
+  const { data, setFiltrer } = useContext(info);
+  const [selectedRegion, setSelectedRegion] = useState("All");
 
   const uniqueRegions = new Set();
 
@@ -12,11 +13,22 @@ export default function Filtre() {
     }
   });
 
-  const regionsArray = [...uniqueRegions];
+  const regionsArray = ["All", ...uniqueRegions];
+
+  const filtreRegion = (event) => {
+    const regionChoisie = event.target.value;
+    setSelectedRegion(regionChoisie);
+
+    if (regionChoisie === "All") {
+      setFiltrer(data);
+    } else {
+      const filteredData = data.filter((element) => element.region === regionChoisie);
+      setFiltrer(filteredData);
+    }
+  };
 
   return (
-    <select className="select select-bordered w-[60%] max-w-xs">
-      <option disabled>Filter by Region</option>
+    <select className="select select-bordered w-[60%] max-w-xs" value={selectedRegion} onChange={filtreRegion}>
       {regionsArray.map((region, index) => {
         return (
           <option key={index} value={region}>

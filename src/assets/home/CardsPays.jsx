@@ -30,7 +30,7 @@ return (
               theme
                 ? "bg-gradient-to-t from-gray-300 to-white shadow-[0px_0px_10px_2px_#4a5568] text-black "
                 : "bg-[#2B3743ff] shadow-[0px_0px_10px_2px_#4a5568]"
-            } w-[300px] md:w-[280px] h-[380px]  rounded-lg overflow-hidden `}
+            } w-[300px] md:w-[280px] h-[380px]  rounded-2xl overflow-hidden `}
           >
             <div
               className="w-full h-[45%] rounded-xl"
