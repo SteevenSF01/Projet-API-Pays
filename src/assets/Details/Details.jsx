@@ -19,25 +19,32 @@ export default function Details() {
 
   return (
     <>
-      <section className={`${theme ? "text-gray-600" : "text-white"} h-fit`}>
-        <Link to="/">
-          <button className={` ${theme ? 'text-gray-600 bg-white' : 'text-white'} border-2 border-gray-400 py-2 px-5 bg-[#2B3743ff] rounded-lg mt-5 ms-5`}>
-            {"<"} Back
-          </button>
-        </Link>
+      <Link to="/">
+        <button
+          className={` ${
+            theme ? "text-gray-600 bg-white" : "text-white"
+          } border-2 border-gray-400 py-2 px-5 bg-[#2B3743ff] rounded-lg mt-5 ms-5`}
+        >
+          {"<"} Back
+        </button>
+      </Link>
+      <section
+        className={`${
+          theme ? "text-gray-600" : "text-white"
+        } h-fit lg:h-[100vh] `}
+      >
         <div
-          className={`h-[80%] flex flex-col items-center justify-between py-5 `}
+          className={`h-[80%] flex flex-col items-center justify-between py-5 lg:flex-row lg:items-center lg:px-5 lg:gap-x-2 `}
         >
           <div
-            className={`w-[80%] h-[210px] border-[1px] bg-no-repeat border-gray-800 shadow-[0px_0px_8px_1px_#2d3748]`}
+            className={`w-[80%] md:w-[50%] lg:w-[50%] lg:h-[60%] lg:rounded-xl h-[210px] border-[1px] bg-no-repeat border-gray-800 shadow-[0px_0px_8px_1px_#2d3748]`}
             style={{
               backgroundImage: `url(${details.flags.png})`,
               backgroundSize: "100% 100%",
               backgroundPosition: "center",
             }}
-          >
-          </div>
-          <div className="mt-5 w-[80%] h-fit shadow-[0px_0px_10px_5px_#2d3748] rounded-xl p-4">
+          ></div>
+          <div className="mt-5 lg:mt-0 w-[80%] lg:w-[50%] lg:h-[80%] h-fit shadow-[0px_0px_10px_5px_#2d3748] lg:shadow-none rounded-xl p-4">
             <article className="w-full h-full flex flex-col gap-5">
               <h1 className="text-xl font-semibold">{details.name.common} </h1>
               <div className="flex justify-between">
@@ -102,7 +109,7 @@ export default function Details() {
                   </p>
                 </div>
               </div>
-              <div className="flex items-center gap-5">
+              <div className="flex flex-col md:flex-row lg:flex-col items-center gap-5">
                 <h1 className="my-2">Border Countries:</h1>
                 <div className="flex flex-wrap gap-3 text-gray-400">
                   {details.borders && details.borders.length > 0 ? (

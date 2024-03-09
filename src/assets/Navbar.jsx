@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Outlet } from "react-router-dom";
+import React from "react";
+import { Outlet, Link } from "react-router-dom";
 import { useContext } from "react";
 import { info } from "../App";
 
@@ -10,11 +10,17 @@ export default function Navbar() {
       <div
         className={` ${
           theme ? "bg-[#f4f5f7]" : "bg-[#2B3743ff]"
-        } border-b-2 border-gray-500 duration-500 container flex justify-between items-center h-[50px] `}
+        } border-b-2 border-gray-500 duration-500 px-10 flex justify-between items-center h-[50px] md:w-screen `}
       >
-        <h1 className={`${theme ? "text-gray-600" : "text-white"} md:text-2xl font-semibold` }>
-          Where in the world?
-        </h1>
+        <Link to="/">
+          <h1
+            className={`${
+              theme ? "text-gray-600" : "text-white"
+            } md:text-2xl font-semibold`}
+          >
+            Where in the world?
+          </h1>
+        </Link>
         <label className="flex cursor-pointer gap-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -22,7 +28,7 @@ export default function Navbar() {
             height="20"
             viewBox="0 0 24 24"
             fill="none"
-            stroke={theme? 'gray' : 'white'}
+            stroke={theme ? "gray" : "white"}
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -42,7 +48,7 @@ export default function Navbar() {
             height="20"
             viewBox="0 0 24 24"
             fill="none"
-            stroke={theme? 'gray' : 'white'}
+            stroke={theme ? "gray" : "white"}
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
