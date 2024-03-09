@@ -12,7 +12,7 @@ function App() {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [recherche, setRecherche] = useState("");
-  const [filtrer, setFiltrer] = useState([]);
+  const [filtrer, setFiltrer] = useState(data || []);
   const [theme, setTheme] = useState(false);
 
   // console.log(data);
@@ -32,14 +32,17 @@ function App() {
   }, []);
 
   useEffect(() => {
-    if (data) {
+    if (recherche === "") {
+      setFiltrer(data || []);
+    } else {
       const filteredItems = data.filter((item) =>
         item.name.common.toLowerCase().includes(recherche.toLowerCase())
       );
-
       setFiltrer(filteredItems);
     }
   }, [data, recherche]);
+  
+
 
   const router = createBrowserRouter([
     {
@@ -75,7 +78,7 @@ function App() {
         {
           path: "/Details",
           element: (
-            <info.Provider value={{ data, theme, setTheme }}>
+            <info.Provider value={{ data, theme, setTheme, setRecherche }}>
               <Details />
             </info.Provider>
           ),
@@ -83,7 +86,7 @@ function App() {
         {
           path: "/Details/:idPays",
           element: (
-            <info.Provider value={{ data, theme }}>
+            <info.Provider value={{ data, theme, setRecherche }}>
               <Details />
             </info.Provider>
           ),
@@ -100,7 +103,7 @@ function App() {
     return (
       <div
         className={`${
-          theme ? "bg-white" : "bg-[#202D36ff]"
+          theme ? "bg-[#f4f5f7]" : "bg-[#202D36ff]"
         }  h-fit flex flex-col`}
       >
         <RouterProvider router={router} />
