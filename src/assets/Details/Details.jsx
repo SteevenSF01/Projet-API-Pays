@@ -34,10 +34,10 @@ export default function Details() {
         } h-fit lg:h-[100vh] `}
       >
         <div
-          className={`h-[80%] flex flex-col items-center justify-between py-5 lg:flex-row lg:items-center lg:px-5 lg:gap-x-2 `}
+          className={`h-[80%] flex flex-col items-center justify-between lg:justify-center py-5 lg:flex-row lg:items-center lg:px-5 lg:gap-x-2 `}
         >
           <div
-            className={`w-[80%] md:w-[50%] lg:w-[50%] lg:h-[60%] lg:rounded-xl h-[210px] border-[1px] bg-no-repeat border-gray-800 shadow-[0px_0px_8px_1px_#2d3748]`}
+            className={`w-[80%] md:w-[50%] lg:w-[35%] lg:h-[60%] lg:rounded-xl h-[210px] border-[1px] bg-no-repeat border-gray-800 shadow-[0px_0px_8px_1px_#2d3748]`}
             style={{
               backgroundImage: `url(${details.flags.png})`,
               backgroundSize: "100% 100%",

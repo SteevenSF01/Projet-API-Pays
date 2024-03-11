@@ -15,7 +15,6 @@ function App() {
   const [filtrer, setFiltrer] = useState(data || []);
   const [theme, setTheme] = useState(false);
 
-  // console.log(data);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -56,7 +55,7 @@ function App() {
         {
           path: "/Projet-API-Pays/",
           element: (
-            <div className="container py-10">
+            <div className="container py-10 mb-20">
               <info.Provider
                 value={{
                   data,
